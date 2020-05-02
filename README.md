@@ -8,4 +8,4 @@ it visualizes the following:
 * Queue
 * Maze (Backtracking Algorithm)
 
-#### Link to view <a href="https://stalin003.github.io/visualizer/" target="_blank">Visualizer</a>
+#### Link to view [Visualizer](https://stalin003.github.io/visualizer/ "data structure visualizer")
