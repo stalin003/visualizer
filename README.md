@@ -7,3 +7,5 @@ it visualizes the following:
 * Stack
 * Queue
 * Maze (Backtracking Algorithm)
+
+#### Link to view <a href="https://stalin003.github.io/visualizer/" target="_blank">Visualizer</a>
