@@ -1,0 +1,228 @@
+
+.mazebox{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid rgb(99, 94, 94);
+}
+
+
+.m-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+ul{
+    list-style-type: none;
+    /* padding: 10px; */
+}
+
+.maze{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    user-select: none;
+}
+
+
+.box-Over{
+    height: 40px;
+    width: 40px;
+    margin: 10px 10px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid rgb(99, 94, 94);
+    border-radius: 25%;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.disabled{
+    background: #353b48a8;
+}
+
+.disabled:hover{
+    border: 1px solid transparent;
+    transform: translateX(0);
+    cursor: initial;
+}
+
+.startMaze,
+.resetMaze{
+    outline: none;
+}
+
+.bgChange{
+    background: transparent;
+    animation-name: bgChanger;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bgChanger{
+    from{background: transparent}
+    to{background: #b33939;}
+}
+
+.para-container{
+    width: 400px;
+    padding: 15px;
+    background: linear-gradient(to left, #3c4352, #353b48);
+    color: #9093a1;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    right: 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+    animation-name: note;
+    animation-duration: 1s;
+}
+
+.para{
+    padding: 10px;
+}
+.cross{
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #7e8191;
+    transition: 0.2s;
+
+}
+
+@keyframes note{
+    from{
+        background: transparent; 
+        color: transparent;
+        box-shadow: 2px 2px 5px transparent;
+    }
+    to{
+        background: #3c4352;
+        color: #9093a1;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.cross:hover{
+    color: #ddd;
+}
+
+.para-container.close-para{
+    display: none;
+}
+
+.endPoint,
+.startPoint{
+    background: linear-gradient(to left, #3c4352, #353b48);
+    color: #9093a1;
+    position: absolute;
+    padding: 10px;
+    
+    border-radius: 10%;
+}
+
+.startPoint{
+    bottom: 100%;
+    right: 80%;
+}
+
+.endPoint{
+    left: 100%;
+    bottom: 10%;
+    transform: translateX(30%);
+}
+
+.inner-end-point,
+.inner-start-point{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.end-point-arrow,
+.start-point-arrow{
+    position: absolute;
+    border: 10px solid #3c4352;
+    
+    
+}
+
+.start-point-arrow{
+    top: 100%;
+    right: 5%;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.end-point-arrow{
+
+    top: 100%;
+    right: 100%;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: translate(-140%, -50%) rotate(90deg);
+}
+
+
+
+@media only screen and (max-width: 992px) {
+
+    .para-container{
+        width: 350px;
+        padding: 12px;
+    }
+    
+    .para{
+        padding: 10px;
+    }
+    .cross{
+        padding: 8px;
+        font-size: 23px;
+    
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+    .mazebox{
+        height: 40px;
+        width: 40px;
+    }
+
+    .box-Over{
+        height: 20px;
+        width: 20px;
+    }
+
+    .left{
+        z-index: 99;
+    }
+
+
+    .para-container{
+        width: 300px;
+        padding: 5px;
+        background: linear-gradient(to left, #3c4352, #353b48);
+    }
+    
+    .para{
+        padding: 10px;
+    }
+    .cross{
+        padding: 10px;
+        font-size: 20px;
+    
+    }
+
+
+}

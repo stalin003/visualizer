@@ -1,0 +1,189 @@
+@media only screen and (max-width: 1200px) {
+    .left{
+        width: 15%;
+    }
+
+    .right{
+        width: 85%;
+    }
+
+    .right-side{
+        margin-top: 20px;
+    }
+
+    .body-color{
+        width: 80vw;
+        height: 91vh;
+    }
+
+    
+}
+
+@media only screen and (max-width: 992px) {
+
+
+    *{
+        font-size: 14px;
+    }
+
+    .startMaze,
+    .resetMaze,
+    .add,
+    .delete,
+    .search,
+    .sub-head,
+    .sub-tail,
+    .sub-pos,
+    .sub-dhead,
+    .sub-shead,
+    .sub-dtail,
+    .sub-stail,
+    .sub-dpos{
+
+        width: 80px;
+        padding: 7px;
+        border-radius: 4px;
+        margin: 5px;
+    }
+
+    .inp{
+        padding: 3px;
+        width: 50px;
+    }
+
+     /************ Node data **************/
+
+    .node-data{
+        width: 45px;
+        height: 45px;
+        border: 3px solid #353b48;
+    }
+    
+    .node-data.nodeDefaultAnime{
+        animation-name: nodevis;
+        animation-duration: 0.5s;
+    }
+    
+    @keyframes nodevis{
+        from{width: 0; height: 0;}
+        to{width: 45px; height: 45px;}
+    }
+
+
+
+    /************Edge**************/
+
+    .dll-edge,
+    .edge{
+        width: 4px;
+        height: 30px;
+    }
+
+    .edge{
+        margin-bottom: 5px;
+    }
+
+    .dll-edge{
+        margin: 5px 0px;
+    }
+
+    /***********arrow**********/
+    .dll-down-arrow,
+    .arrow{
+        border-width: 7px;
+    }
+
+    .dll-up-arrow{
+        border-width: 7px;
+    }
+
+
+
+    /********** Stack Node and Queue Node **************/
+    .queue-data,
+    .stck-data{
+        width: 80px;
+        height: 40px;
+        border: 3px solid #353b48;
+        
+    }
+
+    .queue-container,
+    .stck-container{
+        height: 274px;
+        width: 102px;
+        padding: 5px;
+    }
+
+
+    /************* stack and queue fadeIn effect ****************/
+    .queue-data.queueDefaultAnime,
+    .stck-data.stckDefaultAnime{
+        animation-name: stckvis;
+        animation-duration: 0.5s;
+    }
+
+    @keyframes stckvis{
+        from{width: 0; height: 0;}
+        to{width: 80px; height: 40px;}
+    }
+
+
+    /************* Node fadeOut effect ****************/
+    .queue-data.nodeFadeOut,
+    .stck-data.nodeFadeOut,
+    .node-data.nodeFadeOut{
+        animation-name: nodeFade;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes nodeFade{
+        0%{width: 45px; height: 45px;}
+        25%{width: 50px; height: 50px;}
+        100%{color: transparent; border: 4px solid transparent;}
+    }
+
+
+    .body-color{
+        width: 78vw;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    .body-color{
+        width: 100vw;
+    }
+
+    .left{
+        width: 16%;
+    }
+
+    .right{
+        width: 84%;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    
+
+    .right{
+        width: 100%;
+    }
+
+    .left-right{
+        position: relative;
+    }
+
+    .left{
+        position: absolute;
+        bottom: 0;
+        padding: 4px;
+    }
+
+}

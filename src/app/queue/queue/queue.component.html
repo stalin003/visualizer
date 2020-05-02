@@ -1,0 +1,29 @@
+<section class="body-color left-right">
+    <div class="left">
+
+        <!-- Insert button -->
+        <div class="add addStack">
+            <p>Enqueue</p>
+            <div class="sub-stack">
+                <input class="inp" #queue type="number" placeholder="val">
+                <button class="btn" (click)="enqueue(queue.value, queue)">go</button>
+            </div>
+        </div>
+
+        <!-- remove button -->
+        
+        <div class="delete" (click)="dequeue()">
+            <p>Dequeue</p>
+        </div>
+
+    </div>
+    <div class="right right-side">
+        <div class="l-container">
+            <div class="queue-outer-container">
+                <div class="queue-container" #stck>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

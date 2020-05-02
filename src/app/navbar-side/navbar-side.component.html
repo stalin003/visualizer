@@ -1,0 +1,37 @@
+<div class="menu-bar" #menu (click)="toggleSlider(blkScreen, siderNav, menu)">
+    <div class="menu1"></div>
+    <div class="menu2"></div>
+    <div class="menu3"></div>
+  </div>
+<div class="black-screen" #blkScreen (click)="removeSlider(blkScreen,siderNav, menu)"></div>
+
+<nav #siderNav>
+
+    <div class="side-nav">
+        <div class="box">
+            <div>
+                <h4 class="container">Data Structure</h4>
+            </div>
+            <div class="sub-container hide-list" #DS>
+                <ul>
+                    <li><a [routerLink]="['single-linked-list']" [routerLinkActive]="'active'">singly linked list</a></li>
+                    <li><a [routerLink]="['double-linked-list']" [routerLinkActive]="'active'">double linked list</a></li>
+                    <li><a [routerLink]="['stack']" [routerLinkActive]="'active'">stack</a></li>
+                    <li><a [routerLink]="['queue']" [routerLinkActive]="'active'">queue</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div>
+                <h4 class="container">Backtracking</h4>
+            </div>
+            <div class="sub-container hide-list" #BT>
+                <ul>
+                    <li><a [routerLink]="['maze']" [routerLinkActive]="'active'">maze</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+

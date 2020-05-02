@@ -1,1 +1,456 @@
 /* You can add global styles to this file, and also import other style files */
+/* @font-face{
+    font-family: 'Bangers';
+    src: url(./assets/fonts/Bangers/Bangers-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'BlackOpsOne';
+    src: url(./assets/fonts/Black_Ops_One/BlackOpsOne-Regular.ttf);
+} */
+
+@font-face{
+    font-family: 'Lato';
+    src: url(./assets/fonts/Lato/Lato-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/********** Body Color*************/
+
+.body-color{
+    background: #f5f6fa;
+    width: 85vw;
+    height: 92vh;
+    overflow-x: hidden;
+}
+
+/*********** Nav-left and right body ********/
+
+.left-right{
+    display: flex;
+}
+
+.left{
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.right{
+    width: 90%;
+}
+
+/**************** Insert delete search button **********************/
+.startMaze,
+.resetMaze,
+.add,
+.delete,
+.search,
+.sub-head,
+.sub-tail,
+.sub-pos,
+.sub-dhead,
+.sub-shead,
+.sub-dtail,
+.sub-stail,
+.sub-dpos{
+    width: 100px;
+    background: #353b48;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: aliceblue;
+    margin: 7px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    position: relative;
+    user-select: none;
+}
+
+.addStack:hover .sub-stack,
+.sub-shead:hover .sub-searchHead,
+.sub-stail:hover .sub-searchTail,
+.sub-head:hover .sub-addHead,
+.sub-tail:hover .sub-addTail,
+.sub-pos:hover .sub-addPos,
+.sub-dpos:hover .sub-deletePos,
+.search:hover .sub-search{
+    display: flex;
+    transform: translateY(-15%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.startMaze:hover,
+.resetMaze:hover,
+.add:hover,
+.delete:hover,
+.search:hover,
+.sub-head:hover,
+.sub-tail:hover,
+.sub-pos:hover,
+.sub-dhead:hover,
+.sub-shead:hover,
+.sub-dtail:hover,
+.sub-stail:hover,
+.sub-dpos:hover{
+    background: #2f3640;
+    border: 1px solid #2f3640;
+    transform: translateX(5%);
+}
+
+.sub-stack,
+.sub-searchHead,
+.sub-searchTail,
+.sub-addHead,
+.sub-addTail,
+.sub-addPos,
+.sub-deletePos,
+.sub-search{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    left: 100%;
+    display: none;
+}
+
+.sub-search-container,
+.sub-add-conatiner,
+.sub-delete-conatiner{
+    position: absolute;
+    top: -200%;
+    left: 100%;
+}
+
+.sub-search-ele,
+.sub-add-ele,
+.sub-delete-ele{
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.search:hover .sub-search-ele,
+.add:hover .sub-add-ele,
+.delete:hover .sub-delete-ele{
+    display: flex;
+}
+
+/*******input field of Add and search ***********/
+
+.inp{
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #353b48;
+    width: 60px;
+    text-align: center;
+}
+
+.inp:first-child{
+    margin-right: 2px;
+}
+
+/******* Go Button ***********/
+
+.btn{
+    background: #353b48;
+    cursor: pointer;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    transition: all 0.2s;
+}
+
+.btn:hover{
+    background: #2f3640;
+}
+
+/*black color: #353b48 */
+/*black hover: #2f3640 */
+/*white color: #f5f6fa */
+
+
+
+
+
+
+
+
+
+/********** Node **************/
+.node-data{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #353b48;
+    border-radius: 50%;
+}
+
+/********** Stack Node **************/
+.queue-data,
+.stck-data{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #353b48;
+    margin: 2px;
+    border-radius: 10%;
+    
+}
+
+.queue-data>p{
+    transform: rotate(90deg);
+}
+
+.stck-data{
+    transform: rotate(180deg);
+}
+
+.queue-container,
+.stck-container{
+    height: 332px;
+    width: 130px;
+    padding: 10px;
+    border: 4px solid #353b48;
+    
+    border-bottom: none;
+}
+
+.stck-container{
+    transform: rotate(180deg);
+    border-radius: 10%;
+}
+
+.queue-container{
+    border-top: none;
+    transform: rotate(-90deg);
+}
+
+.queue-outer-container,
+.stck-outer-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.stck-outer-container{
+    align-items: center;
+}
+
+
+/************* Node fadeIn effect ****************/
+.queue-data.queueDefaultAnime,
+.stck-data.stckDefaultAnime{
+    animation-name: stckvis;
+    animation-duration: 0.5s;
+}
+
+@keyframes stckvis{
+    from{width: 0; height: 0;}
+    to{width: 100px; height: 50px;}
+}
+
+.node-data.nodeDefaultAnime{
+    animation-name: nodevis;
+    animation-duration: 0.5s;
+}
+
+@keyframes nodevis{
+    from{width: 0; height: 0;}
+    to{width: 50px; height: 50px;}
+}
+
+/************* Node fadeOut effect ****************/
+.queue-data.nodeFadeOut,
+.stck-data.nodeFadeOut,
+.node-data.nodeFadeOut{
+    animation-name: nodeFade;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nodeFade{
+    0%{width: 50px; height: 50px;}
+    25%{width: 60px; height: 60px;}
+    100%{color: transparent; border: 4px solid transparent;}
+}
+
+/************* Node search anim **********************/
+
+.node-data.searchAnim{
+    animation: animSearch;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animSearch{
+    from{ background: #f5f6fa}
+    to{background: #e74c3c; color: #f5f6fa;}
+}
+
+/***********Node search success*********************/
+
+.node-data.searchAnimSuccess{
+    animation: animSearchSuccess;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animSearchSuccess{
+    from{ background: #f5f6fa}
+    to{background: #8e44ad; color: #f5f6fa;}
+}
+
+
+/**********Linked list container ***********/
+.right-side>.l-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/************Edge**************/
+
+.dll-edge,
+.edge{
+    background: transparent;
+    width: 5px;
+    height: 40px;
+    border-radius: 4px;
+    margin: 4px 0px;
+    position: relative;
+}
+
+
+/***********arrow**********/
+.dll-down-arrow,
+.arrow{
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    top: 100%;
+    left: 0%;
+    transform: translate(-35%, -40%);
+}
+
+.dll-up-arrow{
+    position: absolute;
+    border: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: translate(-37%, -65%);
+    top: 0;
+}
+
+
+/********** Edge and arrow fade In ************/
+.dll-edge.anim,
+.edge.anim{
+    animation-name: animEdge;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animEdge{
+    from{background: transparent;}
+    to{background: #353b48;}
+}
+
+.dll-down-arrow.animArrow,
+.arrow.animArrow{
+    animation-name: animArrow;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animArrow{
+    from{border: 10px solid transparent;}
+    to{border-top: 10px solid #353b48;}
+}
+
+.dll-up-arrow.animUpArrow{
+    animation-name: animUpArrow;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animUpArrow{
+    from{border: 10px solid transparent;}
+    to{border-bottom: 10px solid #353b48;}
+}
+
+/********** Edge and arrow fade out ************/
+.dll-edge.animFadeOut,
+.edge.animFadeOut{
+    animation-name: animEdgeFade;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animEdgeFade{
+    from{background: #353b48;}
+    to{background: transparent;}
+}
+
+.dll-down-arrow.animArrowFadeOut,
+.arrow.animArrowFadeOut{
+    animation-name: animArrowFade;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animArrowFade{
+    from{border-top: 10px solid #353b48;}
+    to{border-top: 10px solid transparent;}
+}
+
+/**************** Right Side **********/
+
+.right-side{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+
+
+
+/************** Media Queries ********************/
+
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { } */

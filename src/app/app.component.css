@@ -1,0 +1,14 @@
+.nav-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-bar{
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-body{
+        display: block;
+    }
+}

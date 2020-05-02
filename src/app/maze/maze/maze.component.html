@@ -1,0 +1,62 @@
+
+<section class="body-color left-right">
+    <div class="left">
+
+        
+
+        <!-- Insert button -->
+        <button class="startMaze"  (click)="createTrans(createTra, rest)" #createTra >
+            Start
+        </button>
+
+        <!-- remove button -->
+        
+        <button class="resetMaze"  (click)="reset(createTra)" #rest> 
+            Reset
+        </button>
+
+    </div>
+    <div class="right right-side">
+        <div class="l-container">
+            <div class="m-container">
+                <div class="para-container" #pContainer>
+                    <div class="para">
+                        Note! Click on the maze cell to add and remove blocks to create custom maze
+                        
+                    </div>
+                    <div class="cross" (click)="closePara(pContainer)"> X</div>
+                </div>
+                <div class="maze">
+                    <ul>
+                        <li *ngFor="let row of maze">
+                            <span class="mazebox" *ngFor="let col of row" [style.background]="(col == 0)?'#353b48':'#f5f6fa'">&nbsp;</span>
+                        </li>
+                    </ul>
+                    
+                </div>
+            
+                <div class="maze">
+                    <ul>
+                        <li *ngFor="let sRow of sol; index as i; first as ifirst; last as ilast">
+                            <span class="box-Over" *ngFor="let sCol of sRow; index as j; first as jfirst; last as jlast" [class.bgChange]="sCol == 1" (click)="setBlock(i, j)">&nbsp;
+                                <span *ngIf="jfirst && ifirst" class="startPoint">start
+                                    <span class="inner-start-point">
+                                        <span class="start-point-arrow"></span>
+                                    </span>
+                                </span>
+                                <span *ngIf="ilast && jlast" class="endPoint">end
+                                    <span class="inner-end-point">
+                                        <span class="end-point-arrow"></span>
+                                    </span>
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                    
+                </div>
+            
+            
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,89 @@
+<section class="body-color left-right">
+    <div class="left">
+
+        <!-- Insert button -->
+        <div class="add">
+            <p>Insert</p>
+            <div class="sub-add-conatiner">
+                <div class="sub-add-ele">
+                    <div class="sub-head">
+                        <p>Head</p>
+                        <div class="sub-addHead">
+                            <input class="inp" #addHead type="number" placeholder="val">
+                            <button class="btn" (click)="insertNodeHead(addHead.value, addHead)">go</button>
+                        </div>
+                    </div>
+                    <div class="sub-tail">
+                        <p>Tail</p>
+                        <div class="sub-addTail">
+                            <input class="inp" #add type="number" placeholder="val">
+                            <button class="btn" (click)="insertNodeTail(add.value, add)">go</button>
+                        </div>
+                    </div>
+                    <div class="sub-pos">
+                        <p>Position</p>
+                        <div class="sub-addPos">
+                            <input class="inp" type="number" placeholder="pos" #pos>
+                            <input class="inp" type="number" placeholder="val" #addPosVal>
+                            <button class="btn" (click)="insertNodePos(pos, addPosVal)" >go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- remove button -->
+        
+        <div class="delete">
+            <p>Remove</p>
+            <div class="sub-delete-conatiner">
+                <div class="sub-delete-ele">
+                    <div class="sub-dhead" (click)="deleteNodeHead()">
+                        <p>Head</p>
+                    </div>
+                    <div class="sub-dtail" (click)="deleteNodeTail()">
+                        <p>Tail</p>
+                    </div>
+                    <div class="sub-dpos">
+                        <p>Position</p>
+                        <div class="sub-deletePos">
+                            <input class="inp" type="number" placeholder="pos" #delpos>
+                            <button class="btn" (click)="deleteNodePos(delpos)" >go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- search button -->
+        <div class="search">
+            <p>Search</p>
+            <div class="sub-search">
+                <input class="inp" type="number" placeholder="val" #sVal>
+                <button class="btn" (click)="traverse(sVal.value, sVal)">go</button>
+                <!-- <button class="btn" (click)="onCloseBtn($event)">close</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="right right-side">
+        <div class="l-container" #cnt>
+            <!-- <div class="node-data">data 1</div>
+            <div class="node-next"><div class="edge"><div class="arrow"></div></div>
+                <div class="node-data">data 2</div>
+                <div class="node-next"><div class="edge"><div class="arrow"></div></div>
+                    <div class="node-data">data 3</div>
+                    <div class="node-next"></div>
+                </div>
+            </div> -->
+            
+            <!-- <div class="node-data">data 1</div>
+            <div class="edge"><div class="arrow"></div></div>
+            <div class="node-data">data 2</div>
+            <div class="edge"><div class="arrow"></div></div>
+            <div class="node-data">data 3</div> -->
+            
+            
+        </div>
+    </div>
+</section>

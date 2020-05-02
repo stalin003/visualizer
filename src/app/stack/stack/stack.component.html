@@ -1,0 +1,29 @@
+<section class="body-color left-right">
+    <div class="left">
+
+        <!-- Insert button -->
+        <div class="add addStack">
+            <p>Push</p>
+            <div class="sub-stack">
+                <input class="inp" #sPush type="number" placeholder="val">
+                <button class="btn" (click)="push(sPush.value, sPush)">go</button>
+            </div>
+        </div>
+
+        <!-- remove button -->
+        
+        <div class="delete" (click)="pop()">
+            <p>Pop</p>
+        </div>
+
+    </div>
+    <div class="right right-side">
+        <div class="l-container">
+            <div class="stck-outer-container">
+                <div class="stck-container" #stck>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
